@@ -21,7 +21,7 @@ class forgot extends React.Component {
         return (
             <View style={styles.container}>
                 <Text>
-                    This is theforogt usernmae or password page, where you can change shit.
+                    This is the forogt usernmae or password page, where you can change shit.
                 </Text>              
                 
             </View>
