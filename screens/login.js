@@ -52,36 +52,45 @@ class login extends React.Component {
     render() {
         return (
             <View style = {styles.container}>
-                <Input 
-                    placeholder = 'Username'
-                    onChangeText={this.onChangeName}
-                    value={this.state.name}
-                    clearButtonMode='always'
-                    textContentType = 'username'
-                />
-                <Input 
-                    secureTextEntry = {true}
-                    placeholder = 'Password'
-                    onChangeText={this.onChangePass}
-                    value={this.state.pass}
-                    clearButtonMode='always'
-                    textContentType = 'password'
-                />
-                <Button 
-                    title="Login"
-                    type="solid"
-                    onPress = {this.signInAsync}
-                />
-                <Button 
-                    title="SignUp"
-                    type="solid"
-                    onPress = {this.onSignupPress}
-                />
-                <Button 
-                    title="Forgot"
-                    type="solid"
-                    onPress = {this.forgotPassPress}
-                />
+                
+                    <Input 
+                        placeholder = 'Username'
+                        onChangeText={this.onChangeName}
+                        value={this.state.name}
+                        clearButtonMode='always'
+                        textContentType = 'username'
+                        autoCompleteType='username'
+                        enablesReturnKeyAutomatically
+                        returnKeyType='next'
+                        returnKeyLabel='next'
+                    />
+                    <Input 
+                        secureTextEntry = {true}
+                        placeholder = 'Password'
+                        onChangeText={this.onChangePass}
+                        value={this.state.pass}
+                        clearButtonMode='always'
+                        textContentType = 'password'
+                        returnKeyType='done'
+                    />
+            
+                <View style = {styles.buttons}>
+                    <Button 
+                        title="Login"
+                        type="outline"
+                        onPress = {this.signInAsync}
+                    />
+                    <Button 
+                        title="SignUp"
+                        type="outline"
+                        onPress = {this.onSignupPress}
+                    />
+                    <Button 
+                        title="Forgot"
+                        type="outline"
+                        onPress = {this.forgotPassPress}
+                    />
+                </View>
             </View>
         );
     }
@@ -91,9 +100,13 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'space-evenly',
-        alignContent: 'space-around',
+        // justifyContent: 'space-evenly',
+        // alignContent: 'space-around',
     },
+    buttons: {
+        alignItems: 'center',
+        flexDirection: 'row',
+    }
 });
 
 export default login;

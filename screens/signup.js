@@ -46,33 +46,42 @@ class signup extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Input 
-                    placeholder = 'Email'
-                    onChangeText={this.onChangeEmail}
-                    value={this.state.email}
-                    clearButtonMode='always'
-                    textContentType = 'emailAddress'
-                />
-                <Input 
-                    placeholder = 'Username'
-                    onChangeText={this.onChangeName}
-                    value={this.state.name}
-                    clearButtonMode='always'
-                    textContentType = 'username'
-                />
-                <Input 
-                    secureTextEntry = {true}
-                    placeholder = 'Password'
-                    onChangeText={this.onChangePass}
-                    value={this.state.pass}
-                    clearButtonMode='always'
-                    textContentType = 'password'
-                />
-                <Button 
-                    title="SignUp"
-                    type="solid"
-                    onPress = {this.signUpAsync}
-                />
+                <View style = {styles.form}>
+                    <Input 
+                        placeholder = 'Email'
+                        onChangeText={this.onChangeEmail}
+                        value={this.state.email}
+                        clearButtonMode='always'
+                        textContentType = 'emailAddress'
+                        keyboardType='email-address'
+                        autoCompleteType='email'
+                        returnKeyType='next'
+                        returnKeyLabel='next'
+                    />
+                    <Input 
+                        placeholder = 'Username'
+                        onChangeText={this.onChangeName}
+                        value={this.state.name}
+                        clearButtonMode='always'
+                        textContentType = 'username'
+                        autoCompleteType='username'
+                        returnKeyType='next'
+                    />
+                    <Input 
+                        secureTextEntry = {true}
+                        placeholder = 'Password'
+                        onChangeText={this.onChangePass}
+                        value={this.state.pass}
+                        clearButtonMode='always'
+                        textContentType = 'newPassword'
+                        returnKeyType='done'
+                    />
+                    <Button 
+                        title="SignUp"
+                        type="solid"
+                        onPress = {this.signUpAsync}
+                    />
+                </View>
             </View>
         )
     }
@@ -82,8 +91,13 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
     },
+    form: {
+        flex: 1,
+        justifyContent: "center",
+        width: "80%",
+    }
 });
 
 export default signup;
