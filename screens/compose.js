@@ -17,17 +17,17 @@ import {
 
 const friendList = [
     {
+        key: 'Jordan'
+    },
+    {
         key: 'Andrew'
     },
-    {
-        key: '1'
-    },
-    {
-        key: '2'
-    },
-    {
-        key: '3'
-    },
+    // {
+    //     key: '2'
+    // },
+    // {
+    //     key: '3'
+    // },
 ]
 
 

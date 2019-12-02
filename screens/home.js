@@ -39,7 +39,7 @@ class home extends React.Component {
         return (
             <View style={styles.container}>
                 <Text>
-                    recent messages
+                    No recent messages
                 </Text>
             </View>
         );

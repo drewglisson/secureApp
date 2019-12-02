@@ -9,6 +9,11 @@ import {
     Button, 
     Input
 } from 'react-native-elements';
+// import mongoose from 'mongoose';
+
+// const url = 'mongodb://localhost:27017/SecureApp'
+
+
 
 class login extends React.Component {
 
@@ -17,6 +22,14 @@ class login extends React.Component {
     };
 
     state = {name: '', pass:''}
+
+    
+
+    // componentDidMount() {
+    //     mongoose.connect(dbPath, {
+    //         useNewUrlParser: true,
+    //     });
+    // }
 
     signInAsync = async () => {
         if ( this.state.name != '' && this.state.pass != '') {

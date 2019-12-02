@@ -26,20 +26,20 @@ class chat extends React.Component {
     };
 
     componentWillMount() {
-        this.setState({
-            messages: [
-                {
-                    _id: 1,
-                    text: 'suck my dick',
-                    createdAt: new Date(),
-                    user: {
-                        _id: 2,
-                        name: "react native",
-                        avatar: 'https://placeimg.com/140/140/any',
-                    },
-                },
-            ],
-        })
+        // this.setState({
+        //     messages: [
+        //         {
+        //             _id: 1,
+        //             text: 'suck my dick',
+        //             createdAt: new Date(),
+        //             user: {
+        //                 _id: 2,
+        //                 name: "react native",
+        //                 avatar: 'https://placeimg.com/140/140/any',
+        //             },
+        //         },
+        //     ],
+        // })
     }
 
     onSend(messages = []) {
