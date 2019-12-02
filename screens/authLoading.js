@@ -7,6 +7,7 @@ import {
   View,
 } from 'react-native';
 
+
 class authLoading extends React.Component {
 
     componentDidMount() {

@@ -52,7 +52,7 @@ class login extends React.Component {
     render() {
         return (
             <View style = {styles.container}>
-                
+                <View style={styles.form}>
                     <Input 
                         placeholder = 'Username'
                         onChangeText={this.onChangeName}
@@ -73,23 +73,24 @@ class login extends React.Component {
                         textContentType = 'password'
                         returnKeyType='done'
                     />
-            
-                <View style = {styles.buttons}>
-                    <Button 
-                        title="Login"
-                        type="outline"
-                        onPress = {this.signInAsync}
-                    />
-                    <Button 
-                        title="SignUp"
-                        type="outline"
-                        onPress = {this.onSignupPress}
-                    />
-                    <Button 
-                        title="Forgot"
-                        type="outline"
-                        onPress = {this.forgotPassPress}
-                    />
+                
+                    <View style = {styles.buttons}>
+                        <Button 
+                            title="Login"
+                            type="outline"
+                            onPress = {this.signInAsync}
+                        />
+                        <Button 
+                            title="SignUp"
+                            type="outline"
+                            onPress = {this.onSignupPress}
+                        />
+                        <Button 
+                            title="Forgot"
+                            type="outline"
+                            onPress = {this.forgotPassPress}
+                        />
+                    </View>
                 </View>
             </View>
         );
@@ -100,11 +101,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        // justifyContent: 'space-evenly',
-        // alignContent: 'space-around',
+        justifyContent: 'space-around',
+    },
+    form: {
+        flex: 1,
+        justifyContent: "center",
+        width: "80%",
     },
     buttons: {
-        alignItems: 'center',
+        justifyContent: "center",
         flexDirection: 'row',
     }
 });

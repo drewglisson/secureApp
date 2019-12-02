@@ -49,7 +49,7 @@ class settings extends React.Component {
                     type="solid"
                     onPress = {this.signOutAsync}
                 />
-                <View style ={{width: "80%", flexDirection: "row", justifyContent: "space-around"}}>
+                <View style ={styles.row}>
                     <Input 
                         style= {{width: "80%"}}
                         placeholder = 'Add Friend'
@@ -115,6 +115,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-evenly',
     },
+    row: {
+        width: "80%", 
+        flexDirection: "row", 
+        justifyContent: "space-around"
+    }
 });
 
 export default settings;

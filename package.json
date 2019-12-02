@@ -10,6 +10,8 @@
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.2",
     "expo": "^35.0.0",
+    "fbjs": "^1.0.0",
+    "mongodb": "^3.3.5",
     "native-base": "^2.13.8",
     "react": "16.8.3",
     "react-dom": "16.8.3",

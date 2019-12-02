@@ -77,8 +77,9 @@ class signup extends React.Component {
                         returnKeyType='done'
                     />
                     <Button 
+                        style={styles.button}
                         title="SignUp"
-                        type="solid"
+                        type="outline"
                         onPress = {this.signUpAsync}
                     />
                 </View>
@@ -97,7 +98,11 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         width: "80%",
-    }
+    },
+    buttons: {
+        justifyContent: "center",
+        flexDirection: 'row',
+    },
 });
 
 export default signup;
