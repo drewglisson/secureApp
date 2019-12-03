@@ -9,13 +9,26 @@ import {
     Button, 
     Input
 } from 'react-native-elements';
-// import mongoose from 'mongoose';
+import { 
+    Stitch, AnonymousCredential
+} from 'mongodb-stitch-react-native-sdk';
 
-// const url = 'mongodb://localhost:27017/SecureApp'
+const url = 'mongodb+srv://group2:poosd@cluster0-nu8c7.mongodb.net/test?retryWrites=true&w=majority'
 
 
 
 class login extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state={
+          currentUserId: undefined,
+          client: undefined
+        };
+        this._loadClient = this._loadClient.bind(this);
+        // this._onPressLogin = this._onPressLogin.bind(this);
+        // this._onPressLogout = this._onPressLogout.bind(this);
+      }
 
     static navigationOptions = {
         title: 'Login'
@@ -26,15 +39,31 @@ class login extends React.Component {
     
 
     // componentDidMount() {
-    //     mongoose.connect(dbPath, {
-    //         useNewUrlParser: true,
-    //     });
+    //     this._loadClient();
+    //     console.log("hi");
+    //     console.log(Stitch.hasAppClient('mongodb+srv://group2:poosd@cluster0-nu8c7.mongodb.net/test?retryWrites=true&w=majority'));
     // }
 
+    // _loadClient() {
+    //     Stitch.initializeDefaultAppClient('mongodb+srv://group2:poosd@cluster0-nu8c7.mongodb.net/test?retryWrites=true&w=majority').then(client => {
+    //         this.setState({ client });
+       
+    //         if(client.auth.isLoggedIn) {
+    //           this.setState({ currentUserId: client.auth.user.id })
+    //         } 
+    //         // else {
+    //         //     console.log(client);
+    //         // }
+    //       });
+    // }
+    
+
     signInAsync = async () => {
+
+        
+
         if ( this.state.name != '' && this.state.pass != '') {
             try {
-
                 await AsyncStorage.setItem('userToken', 'abc');
                 this.props.navigation.navigate('app', {name: this.state.name});
 

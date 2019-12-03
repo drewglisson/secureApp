@@ -3,11 +3,13 @@ import {
     View, 
     StyleSheet,
     Text, 
-    Button
+    Button,
+    Platform,
+    KeyboardAvoidingView
 } from 'react-native';
 
 import { GiftedChat } from 'react-native-gifted-chat';
-
+import KeyboardSpacer from 'react-native-keyboard-spacer';
 class chat extends React.Component {
 
     static navigationOptions = ({ navigation}) => ({
@@ -15,8 +17,8 @@ class chat extends React.Component {
 
         headerRight: () => (
             <Button 
-                // onPress={() => navigation.navigate('settings')}
-                title="info"
+                onPress={() => navigation.navigate('settings')}
+                title="settings"
             />
         ),
     });
@@ -30,7 +32,7 @@ class chat extends React.Component {
         //     messages: [
         //         {
         //             _id: 1,
-        //             text: 'suck my dick',
+        //             text: 'Welcome',
         //             createdAt: new Date(),
         //             user: {
         //                 _id: 2,
@@ -50,13 +52,18 @@ class chat extends React.Component {
 
     render() {
         return (
-            <GiftedChat 
-                messages={this.state.messages}
-                onSend = {messages => this.onSend(messages)}
-                user = {{
-                    _id: 1,
-                }}
-            />
+            <View style={styles.container}>
+                <GiftedChat 
+                    messages={this.state.messages}
+                    onSend = {messages => this.onSend(messages)}
+                    user = {{
+                        _id: 1,
+                    }}
+                />
+               
+                {/* <KeyboardSpacer/>    */}
+                <KeyboardAvoidingView behavior={Platform.OS === 'android' ? 'padding' :  null} keyboardVerticalOffset={80}/>
+        </View>    
         );
     }
 }
@@ -64,8 +71,8 @@ class chat extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
+        // alignItems: 'center',
+        // justifyContent: 'center',
       },
 });
 
