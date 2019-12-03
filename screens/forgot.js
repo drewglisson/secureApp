@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { 
     View, 
     Text,
-    AsyncStorage,
-    TouchableOpacity,
     StyleSheet,
 } from 'react-native';
 
@@ -12,17 +10,11 @@ import {
 
 class forgot extends React.Component {
 
-    signOutAsync = async () => {
-        await AsyncStorage.clear();
-        this.props.navigation.navigate('auth');
-    };
-
     render() {
         return (
             <View style={styles.container}>
                 <Text>
-                    This is the forogt usernmae or password page, where you can change shit.
-                    IDK if i want this as a feature any more 
+                    Advance page for the user to reset their password 
                 </Text>              
                 
             </View>

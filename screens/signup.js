@@ -18,10 +18,14 @@ class signup extends React.Component {
 
     state = {name: '', email: '', pass: '' }
 
+    // when typing in the text input it calls this state change which 
+    // outputs the change back to the text input 
+
     onChangeEmail = email => this.setState({email});
     onChangeName = name => this.setState({name});
     onChangePass = pass => this.setState({pass});
 
+    // 'creates' your account and logs you in with async 
     signUpAsync = async () => {
         if ( this.state.email != '' && this.state.name != '' && this.state.pass != '') {
             try {

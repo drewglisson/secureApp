@@ -3,7 +3,6 @@ import {
     View, 
     Text,
     AsyncStorage,
-    TouchableOpacity,
     StyleSheet,
     Picker,
 } from 'react-native';
@@ -12,8 +11,6 @@ import {
     Input,
     Icon,
 } from 'react-native-elements';
-// import { Picker } from 'native-base';
-// import RNPickerSelect from 'react-native-picker-select';
 
 class settings extends React.Component {
 
@@ -21,6 +18,7 @@ class settings extends React.Component {
         title: 'Setting'
     };
 
+    // signs you out and clears your async token
     signOutAsync = async () => {
         await AsyncStorage.clear();
         this.props.navigation.navigate('auth');
@@ -29,15 +27,14 @@ class settings extends React.Component {
     state = {friend: '', deletion: '',}
 
     state = {user: ''}
-   updateUser = (user) => {
-      this.setState({ user: user })
-   }
+
+    updateUser = (user) => {
+        this.setState({ user: user })
+    }
 
     onChangeFriend = friend => this.setState({friend});
     onChangeDeletion = deletion => this.setState({deletion});
 
-    // add friend to database 
-    // addFriend 
 
     render() {
         return (
@@ -59,12 +56,11 @@ class settings extends React.Component {
                         returnKeyType='done'
                     />
                      <Button style= {{ width: "80%"}}
-                        // title="Add Friend"
                         icon = {
                             <Icon
                                 name ="done"
                                 size = {20} 
-                                />
+                            />
                         }
                         type="solid"
                         onPress = {this.addFriend}
@@ -85,6 +81,7 @@ class settings extends React.Component {
 
                 {/* <View style={{flexDirection ='row'}}>
                     <Input 
+                    // advance features: to change your password
                         placeholder = 'Change Password'
                         onChangeText={this.onChangePass}
                         value={this.state.pass}
@@ -102,8 +99,6 @@ class settings extends React.Component {
                         onPress = {this.changePass}
                     />
                 </View> */}
-                
-                
             </View>
         )
     }

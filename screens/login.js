@@ -9,59 +9,20 @@ import {
     Button, 
     Input
 } from 'react-native-elements';
-import { 
-    Stitch, AnonymousCredential
-} from 'mongodb-stitch-react-native-sdk';
-
-const url = 'mongodb+srv://group2:poosd@cluster0-nu8c7.mongodb.net/test?retryWrites=true&w=majority'
-
-
 
 class login extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.state={
-          currentUserId: undefined,
-          client: undefined
-        };
-        this._loadClient = this._loadClient.bind(this);
-        // this._onPressLogin = this._onPressLogin.bind(this);
-        // this._onPressLogout = this._onPressLogout.bind(this);
-      }
 
     static navigationOptions = {
         title: 'Login'
     };
 
+    // setting the state for the render variables 
     state = {name: '', pass:''}
-
     
-
-    // componentDidMount() {
-    //     this._loadClient();
-    //     console.log("hi");
-    //     console.log(Stitch.hasAppClient('mongodb+srv://group2:poosd@cluster0-nu8c7.mongodb.net/test?retryWrites=true&w=majority'));
-    // }
-
-    // _loadClient() {
-    //     Stitch.initializeDefaultAppClient('mongodb+srv://group2:poosd@cluster0-nu8c7.mongodb.net/test?retryWrites=true&w=majority').then(client => {
-    //         this.setState({ client });
-       
-    //         if(client.auth.isLoggedIn) {
-    //           this.setState({ currentUserId: client.auth.user.id })
-    //         } 
-    //         // else {
-    //         //     console.log(client);
-    //         // }
-    //       });
-    // }
-    
-
     signInAsync = async () => {
 
-        
-
+        // using async the phone stores a token and will keep you logged in 
+        // until you log out, even if you close the app
         if ( this.state.name != '' && this.state.pass != '') {
             try {
                 await AsyncStorage.setItem('userToken', 'abc');
@@ -81,13 +42,17 @@ class login extends React.Component {
         }
     };
 
+    // navigation to the signup page
     onSignupPress = () => {
         this.props.navigation.navigate('signup');
     }
+    // navigation to the forgot password page
     forgotPassPress = () => {
         this.props.navigation.navigate('forgot');
     }
 
+    // when typing in the text input it calls this state change which 
+    // outputs the change back to the text input 
     onChangeName = name => this.setState({name});
     onChangePass = pass => this.setState({pass});
 

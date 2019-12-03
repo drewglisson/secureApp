@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import { 
     View, 
     Text,
-    TextInput, 
-    TouchableHighlight,
     StyleSheet,
-    Modal,
 } from 'react-native';
 import {
     Button,  
@@ -26,6 +23,7 @@ class home extends React.Component {
             />
         ),
 
+        // navigation to the compose page 
         headerRight: () => (
             <Button 
                 onPress={() => navigation.navigate('compose')}
@@ -36,6 +34,7 @@ class home extends React.Component {
     });
 
     render() {
+        // advance feature - list of recent messages
         return (
             <View style={styles.container}>
                 <Text>

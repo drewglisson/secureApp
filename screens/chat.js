@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import { 
     View, 
     StyleSheet,
-    Text, 
     Button,
     Platform,
     KeyboardAvoidingView
 } from 'react-native';
 
 import { GiftedChat } from 'react-native-gifted-chat';
-import KeyboardSpacer from 'react-native-keyboard-spacer';
+
 class chat extends React.Component {
 
     static navigationOptions = ({ navigation}) => ({
@@ -28,22 +27,23 @@ class chat extends React.Component {
     };
 
     componentWillMount() {
-        // this.setState({
-        //     messages: [
-        //         {
-        //             _id: 1,
-        //             text: 'Welcome',
-        //             createdAt: new Date(),
-        //             user: {
-        //                 _id: 2,
-        //                 name: "react native",
-        //                 avatar: 'https://placeimg.com/140/140/any',
-        //             },
-        //         },
-        //     ],
-        // })
+        this.setState({
+            messages: [
+                {
+                    _id: 1,
+                    text: 'Welcome to our app',
+                    createdAt: new Date(),
+                    user: {
+                        _id: 2,
+                        name: "alice",
+                        avatar: 'https://placeimg.com/140/140/any',
+                    },
+                },
+            ],
+        })
     }
 
+    // appends the message object to the gifted message list
     onSend(messages = []) {
         this.setState(previousState => ({
             messages: GiftedChat.append(previousState.messages, messages),
@@ -60,9 +60,10 @@ class chat extends React.Component {
                         _id: 1,
                     }}
                 />
-               
-                {/* <KeyboardSpacer/>    */}
-                <KeyboardAvoidingView behavior={Platform.OS === 'android' ? 'padding' :  null} keyboardVerticalOffset={80}/>
+                <KeyboardAvoidingView 
+                    behavior={Platform.OS === 'android' ? 'padding' :  null} 
+                    keyboardVerticalOffset={80}
+                />
         </View>    
         );
     }
@@ -71,8 +72,6 @@ class chat extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // alignItems: 'center',
-        // justifyContent: 'center',
       },
 });
 

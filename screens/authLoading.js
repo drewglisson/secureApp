@@ -10,6 +10,7 @@ import {
 
 class authLoading extends React.Component {
 
+    // when the page loads it calls the async function
     componentDidMount() {
         this.bootStrapAsync();
     }
