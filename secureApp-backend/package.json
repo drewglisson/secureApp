@@ -1,0 +1,27 @@
+{
+  "name": "mongotest",
+  "version": "1.0.0",
+  "description": "MongoDB Test",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "mongo",
+    "db"
+  ],
+  "author": "Connor Austin",
+  "license": "ISC",
+  "dependencies": {
+    "BigInt": "^5.5.3",
+    "aes256": "^1.0.4",
+    "body-parser": "^1.19.0",
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "mongodb": "^3.3.5",
+    "mongoose": "^5.7.11",
+    "nodejs-mobile-react-native": "^0.5.0",
+    "pusher": "^3.0.0",
+    "random-int": "^2.0.1"
+  }
+}
