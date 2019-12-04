@@ -1,7 +1,7 @@
 # Secure Messaging App
 
 > The front end made in React Native with Expo <p> 
-> The backend is seperate but still accessable, working on connecting the two
+> The backend made with Node.js and mongoDB is seperate but still accessable, working on connecting the two
 
 ## Materials required
 - Node.js version 10.16.3
